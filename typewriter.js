@@ -1,10 +1,13 @@
 const sentence = "hello there from lighthouse labs";
-const typewriter = (data) => {
-for (let i = 0; i < data.length; i++) {
-setTimeout(() =>{
-  process.stdout.write(data[i]);
- }, 50 * i);
-}
-};
 
-typewriter(sentence);
+for (let i = 0; i < sentence.length; i++) {
+setTimeout(() =>{
+  process.stdout.write(sentence[i]);
+ }, 50 * i);
+
+ if (i === sentence.length - 1) {
+  setTimeout(() => {
+    process.stdout.write('\n');
+  }, 50 * i);
+}
+}
